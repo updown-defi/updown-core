@@ -1,0 +1,33 @@
+.cr-modal-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.cr-modal-content {
+  position: fixed;
+  top: 0;
+  border-radius: 16px;
+  background: white;
+  left: 50%;
+  margin-top: 4%;
+  transition: 0.05s all;
+  z-index: 100000;
+  max-height: 95vh;
+  padding: 2rem 2.5rem;
+}
+
+/* TOGGLE ACTIONS */
+
+.cr-modal-show {
+  transform: translate(-50%) scale(1);
+}
+
+.cr-modal-hide {
+  transform: translate(-50%) scale(0);
+}

@@ -1,0 +1,112 @@
+{
+  "address": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "underlying",
+          "type": "address"
+        }
+      ],
+      "name": "getAssetPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "underlying",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xaa1e66ddedd18b6681cc82172d78097229a3b052a284ff9490d096aa0ddef1e4",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xa513E6E4b8f2a923D98304ec87F64353C4D5C853",
+    "transactionIndex": 0,
+    "gasUsed": "109381",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9196d126f59c4fdc64da27dd2f9ce592ac8488843c39a60fffd4b0e5f3bd51e9",
+    "transactionHash": "0xaa1e66ddedd18b6681cc82172d78097229a3b052a284ff9490d096aa0ddef1e4",
+    "logs": [],
+    "blockNumber": 11203146,
+    "cumulativeGasUsed": "109381",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "e4e2768f5c53a04b13cc4c9e08b5e284",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"underlying\",\"type\":\"address\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"underlying\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"newPrice\",\"type\":\"uint256\"}],\"name\":\"setPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/DevOracle.sol\":\"DevOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1},\"remappings\":[]},\"sources\":{\"contracts/DevOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\n\\nimport './interfaces/IPriceOracleGetter.sol';\\n\\ncontract DevOracle is IPriceOracleGetter {\\n\\n    mapping (address=>uint256) private _price;\\n\\n    uint256 private price_;\\n\\n    function setPrice(address underlying, uint newPrice) public {\\n        _price[underlying] = newPrice;\\n    }\\n\\n    function getAssetPrice(address underlying) override external view returns (uint256) {\\n        return _price[underlying];\\n    }\\n}\\n\",\"keccak256\":\"0xd7efb8c1e7eb030d7445d04177d95c3628fb334d67a0ad5ca0ce517a56ff126c\",\"license\":\"MIT\"},\"contracts/interfaces/IPriceOracleGetter.sol\":{\"content\":\"pragma solidity ^0.6.0;\\n\\n/************\\n@title IPriceOracleGetter interface\\n@notice Interface for the Aave price oracle.*/\\ninterface IPriceOracleGetter {\\n    function getAssetPrice(address _asset) external view returns (uint256);\\n}\",\"keccak256\":\"0x02c2a08011f12beff68980cb6aeecc9eaf592337ddc37b5baf89e4b68882ad8f\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610103806100206000396000f3fe6080604052348015600f57600080fd5b506004361060315760003560e01c8062e4768b146036578063b3596f07146061575b600080fd5b605f60048036036040811015604a57600080fd5b506001600160a01b0381351690602001356096565b005b608460048036036020811015607557600080fd5b50356001600160a01b031660b2565b60408051918252519081900360200190f35b6001600160a01b03909116600090815260208190526040902055565b6001600160a01b03166000908152602081905260409020549056fea26469706673582212201d7b6e98e664cf89fcfd07cb21cc76ce6779c207279c30547f7ea72076815e5564736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060315760003560e01c8062e4768b146036578063b3596f07146061575b600080fd5b605f60048036036040811015604a57600080fd5b506001600160a01b0381351690602001356096565b005b608460048036036020811015607557600080fd5b50356001600160a01b031660b2565b60408051918252519081900360200190f35b6001600160a01b03909116600090815260208190526040902055565b6001600160a01b03166000908152602081905260409020549056fea26469706673582212201d7b6e98e664cf89fcfd07cb21cc76ce6779c207279c30547f7ea72076815e5564736f6c634300060c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2147,
+        "contract": "contracts/DevOracle.sol:DevOracle",
+        "label": "_price",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 2149,
+        "contract": "contracts/DevOracle.sol:DevOracle",
+        "label": "price_",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

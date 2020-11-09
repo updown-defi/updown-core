@@ -1,0 +1,6 @@
+types
+artifacts
+cache
+node_modules
+deployments/localhost
+secrets.json

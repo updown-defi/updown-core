@@ -1,0 +1,118 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "underlying",
+          "type": "address"
+        }
+      ],
+      "name": "getAssetPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "underlying",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "receipt": {
+    "to": null,
+    "from": "0x70A5C9D346416f901826581d423Cd5B92d44Ff5a",
+    "contractAddress": "0x743bF5967D376e473bc341225C4e148184277106",
+    "transactionIndex": 0,
+    "gasUsed": "144247",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x22220c923b6fbac6f3a41e05c89dad4d590462b7722be912d793cb1908a85477",
+    "transactionHash": "0x6fcecdd6e91180a2e67a9aad328f987efb7f42005f3eecf106189b147cc626f0",
+    "logs": [],
+    "blockNumber": 3504041,
+    "cumulativeGasUsed": "144247",
+    "status": 1,
+    "byzantium": true
+  },
+  "address": "0x743bF5967D376e473bc341225C4e148184277106",
+  "args": [],
+  "solcInputHash": "0xb8b3da548ebf8e7dbca30bd933162c3d90a40c2ea8fe4948ba0862f749468cc5",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"underlying\",\"type\":\"address\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"underlying\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"newPrice\",\"type\":\"uint256\"}],\"name\":\"setPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"contracts/DevOracle.sol\":\"DevOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":10},\"remappings\":[]},\"sources\":{\"contracts/DevOracle.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\n\\nimport './interfaces/IPriceOracleGetter.sol';\\n\\ncontract DevOracle is IPriceOracleGetter {\\n\\n    mapping (address=>uint256) private _price;\\n\\n    uint256 private price_;\\n\\n    function setPrice(address underlying, uint newPrice) public {\\n        _price[underlying] = newPrice;\\n    }\\n\\n    function getAssetPrice(address underlying) override external view returns (uint256) {\\n        return _price[underlying];\\n    }\\n}\\n\",\"keccak256\":\"0xd7efb8c1e7eb030d7445d04177d95c3628fb334d67a0ad5ca0ce517a56ff126c\"},\"contracts/interfaces/IPriceOracleGetter.sol\":{\"content\":\"pragma solidity ^0.6.0;\\n\\n/************\\n@title IPriceOracleGetter interface\\n@notice Interface for the Aave price oracle.*/\\ninterface IPriceOracleGetter {\\n    function getAssetPrice(address _asset) external view returns (uint256);\\n}\",\"keccak256\":\"0x02c2a08011f12beff68980cb6aeecc9eaf592337ddc37b5baf89e4b68882ad8f\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101a5806100206000396000f3fe608060405234801561001057600080fd5b50600436106100355760003560e01c8062e4768b1461003a578063b3596f0714610088575b600080fd5b6100866004803603604081101561005057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506100e0565b005b6100ca6004803603602081101561009e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610127565b6040518082815260200191505060405180910390f35b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea2646970667358221220a0de330d78e5b117ebd1d8b8cf798627dee3a4975c8cd700ed703575e17d9e9a64736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100355760003560e01c8062e4768b1461003a578063b3596f0714610088575b600080fd5b6100866004803603604081101561005057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506100e0565b005b6100ca6004803603602081101561009e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610127565b6040518082815260200191505060405180910390f35b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905091905056fea2646970667358221220a0de330d78e5b117ebd1d8b8cf798627dee3a4975c8cd700ed703575e17d9e9a64736f6c63430006060033",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2694,
+        "contract": "contracts/DevOracle.sol:DevOracle",
+        "label": "_price",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 2696,
+        "contract": "contracts/DevOracle.sol:DevOracle",
+        "label": "price_",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  },
+  "gasEstimates": {
+    "creation": {
+      "codeDepositCost": "84200",
+      "executionCost": "135",
+      "totalCost": "84335"
+    },
+    "external": {
+      "getAssetPrice(address)": "1196",
+      "setPrice(address,uint256)": "20345"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+name: Update Prices
+on:
+  schedule:
+    - cron:  '*/10 * * * *' # every 10 minutes
+
+defaults:
+  run: 
+    working-directory: packages/updown-contracts
+
+jobs:
+  update-price:
+    name: "Update price and test for end"
+    env: # Or as an environment variable
+      KOVAN_MNEMONIC: ${{ secrets.KOVAN_MNEMONIC }}
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: packages/updown-contracts
+      - run: echo "{}" > secrets.json
+      - run: ./scripts/updateAll.sh

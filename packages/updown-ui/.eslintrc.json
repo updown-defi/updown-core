@@ -1,0 +1,64 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react-hooks"],
+  "extends": ["airbnb-typescript"],
+  "rules": {
+    "no-shadow": "off",
+    "requireForBlockBody": false,
+    "react/destructuring-assignment": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "global-require": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/display-name": "off",
+    "react/jsx-boolean-value": "off",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-sort-props": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-did-mount-set-state": "error",
+    "react/no-did-update-set-state": "error",
+    "react/no-multi-comp": "off",
+    "react/no-string-refs": "error",
+    "react/no-unknown-property": "off",
+    "react/react-in-jsx-scope": "error",
+    "react/self-closing-comp": "error",
+    "react/wrap-multilines": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "semi": "off",
+    "arrow-body-style": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
+    "react/jsx-max-props-per-line": [
+      "error",
+      { "when": "multiline" }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^(_|props)"
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true
+      }
+    ]
+  }
+}
